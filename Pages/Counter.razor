@@ -1,0 +1,27 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+@for (int i = 0; i < currentCount; i++)
+{
+    <h1>Counter @i</h1>
+}
+
+<p role="status">Current count: @currentCount</p>
+
+<input @bind="strInputText" />
+
+<div>@strInputText</div>
+
+<button class="btn btn-primary" @onclick="() => IncrementCount(4)">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private string? strInputText;
+
+    private void IncrementCount(int _cpt)
+    {
+        currentCount += _cpt;
+    }
+}
